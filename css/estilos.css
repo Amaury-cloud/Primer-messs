@@ -1,0 +1,239 @@
+body {
+    background: linear-gradient(135deg, #332519 40%, #d6c09a 100%);
+    font-family: 'UnifrakturCook', cursive;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    position: relative;
+}
+/* Exterior Detalles */
+.exterior-detalle {
+    position: fixed;
+    font-size: 2.9em;
+    color: #e6d1b0cc;
+    opacity: 0.72;
+    pointer-events: none;
+    z-index: 20;
+    text-shadow: 0 0 18px #bca06f77, 0 0 8px #ad8b5480;
+    user-select: none;
+}
+.esquina-1 { top: 20px; left: 26px; }
+.esquina-2 { top: 26px; right: 30px; }
+.esquina-3 { bottom: 32px; left: 26px; }
+.esquina-4 { bottom: 24px; right: 32px; }
+.exterior-barra-superior, .exterior-barra-inferior {
+    position: fixed;
+    left: 0; right: 0;
+    text-align: center;
+    font-size: 2.2em;
+    color: #bfa57a;
+    opacity: 0.62;
+    z-index: 15;
+    letter-spacing: 0.28em;
+    font-family: 'UnifrakturCook', cursive;
+    text-shadow: 0 1px 10px #c9b38788;
+    pointer-events: none;
+    user-select: none;
+}
+.exterior-barra-superior { top: 0; }
+.exterior-barra-inferior { bottom: 0; }
+.exterior-brillo {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 10;
+    pointer-events: none;
+    background: radial-gradient(ellipse at 50% 43%, #e1c89b14 0%, transparent 75%);
+    opacity: 0.7;
+}
+
+/* Relieve de Rosas en los lados usando solo CSS/Unicode */
+.rosa-vertical {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    pointer-events: none;
+    z-index: 12;
+    opacity: 0.92;
+}
+.rosa-vertical.izquierda { left: 0; }
+.rosa-vertical.derecha { right: 0; }
+.rosa-vertical::before,
+.rosa-vertical::after,
+.rosa-vertical span {
+    content: '';
+    display: block;
+    font-size: 2.1em;
+    color: #a06060;
+    text-shadow: 0 0 4px #332519, 0 0 14px #f8d6d6;
+    margin: 13px 0;
+    text-align: center;
+    font-family: 'UnifrakturCook', cursive;
+}
+.rosa-vertical::before {
+    content: "🌹";
+    margin-top: 13px;
+}
+.rosa-vertical::after {
+    content: "🌹";
+    margin-bottom: 13px;
+}
+.rosa-vertical span {
+    content: "❀";
+    color: #b48484;
+    font-size: 1.7em;
+    text-shadow: 0 0 4px #7d2d2d, 0 0 8px #d6c09a;
+}
+
+/* Rosa relleno vertical con varias flores (simulado en HTML por JS o puedes añadir más flores si quieres más detalle) */
+.rosa-vertical.izquierda {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.rosa-vertical.derecha {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+/* Puedes añadir más flores manualmente insertando <span>🌹</span> y <span>❀</span> en el HTML 
+   dentro de cada .rosa-vertical si quieres mayor densidad de rosas */
+
+/* Main content y detalles internos */
+.main-content {
+    position: relative;
+    max-width: 520px;
+    margin: 80px auto 40px auto;
+    background: rgba(58, 44, 31, 0.97);
+    border-radius: 28px;
+    box-shadow: 0 0 40px #9a7e52, 0 0 0 6px #e7d2b1 inset;
+    z-index: 50;
+    padding: 60px 24px 50px 24px;
+    text-align: center;
+    overflow: hidden;
+    border: 4px double #d6c09a;
+}
+.detalles-goticos::before,
+.detalles-goticos::after {
+    content: "❧";
+    font-size: 2.4em;
+    color: #b2997c;
+    position: absolute;
+    opacity: 0.75;
+}
+.detalles-goticos::before {
+    top: 12px;
+    left: 22px;
+    transform: rotate(-20deg);
+}
+.detalles-goticos::after {
+    bottom: 12px;
+    right: 22px;
+    transform: rotate(20deg);
+}
+.unicode-divider {
+    text-align: center;
+    color: #d6c09a;
+    font-size: 2em;
+    margin: 28px 0 14px 0;
+    letter-spacing: 0.2em;
+    font-family: 'UnifrakturCook', cursive;
+}
+.unicode-divider.inferior {
+    margin: 20px 0 18px 0;
+}
+.simbolos-decorativos {
+    text-align: center;
+    color: #a47f4d;
+    font-size: 1.6em;
+    margin-bottom: 18px;
+    letter-spacing: 0.25em;
+}
+.detalle-izq, .detalle-der {
+    position: absolute;
+    font-family: 'UnifrakturCook', cursive;
+    color: #c6a57d;
+    font-size: 1.1em;
+    opacity: 0.8;
+    z-index: 7;
+    pointer-events: none;
+}
+.detalle-izq { top: 48px; left: 64px; }
+.detalle-der { bottom: 48px; right: 64px; }
+.img-center {
+    width: 92%;
+    max-width: 360px;
+    border-radius: 17px;
+    margin: 0 auto 28px auto;
+    display: block;
+    box-shadow: 0 0 30px #e8cfa8, 0 0 0 7px #b2997c33 inset;
+    border: 3px solid #d6c09a;
+    position: relative;
+    z-index: 5;
+}
+.gothic-btn {
+    background: linear-gradient(90deg, #7b5b36, #c6a57d 90%);
+    color: #fff9e6;
+    font-family: 'UnifrakturCook', cursive;
+    font-size: 1.5em;
+    border: 2.5px solid #b2997c;
+    padding: 12px 36px;
+    border-radius: 32px;
+    margin: 20px 0 10px 0;
+    cursor: pointer;
+    box-shadow: 0 2px 10px #6d5231a8;
+    transition: background 0.3s, transform 0.2s;
+    position: relative;
+    z-index: 6;
+}
+.gothic-btn:hover,
+.gothic-btn:active {
+    background: linear-gradient(90deg, #c6a57d, #7b5b36 90%);
+    transform: scale(1.04);
+}
+.mini-text {
+    display: none;
+    background: rgba(255, 234, 206, 0.97);
+    color: #4e2d1a;
+    border: 2px solid #b2997c;
+    border-radius: 16px;
+    padding: 18px 18px 12px 18px;
+    margin: 18px auto 0 auto;
+    font-size: 1.18em;
+    box-shadow: 0 1px 10px #ccaf7e88;
+    width: 90%;
+    transition: all 0.3s;
+    position: relative;
+    z-index: 6;
+}
+.mini-text.active {
+    display: block;
+    animation: fadeIn 0.7s;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9);}
+    to { opacity: 1; transform: scale(1);}
+}
+.firma {
+    margin-top: 16px;
+    color: #baa07c;
+    font-size: 1em;
+    letter-spacing: 1.5px;
+}
+/* Responsive */
+@media (max-width: 700px) {
+    .main-content { margin: 12vw 2vw; padding: 24px 2vw 28px 2vw;}
+    .img-center { max-width: 96vw; }
+    .detalle-izq { top: 32px; left: 28px; font-size: 0.95em;}
+    .detalle-der { bottom: 32px; right: 28px; font-size: 0.95em;}
+    .detalles-goticos::before, .detalles-goticos::after { font-size: 1.7em;}
+    .exterior-detalle { font-size: 1.5em; }
+    .exterior-barra-superior, .exterior-barra-inferior { font-size: 1.1em; }
+    .rosa-vertical { width: 20px; }
+}
